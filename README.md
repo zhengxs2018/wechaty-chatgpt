@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
 </a>
 
-基于 ChatGPT API 开发的微信聊天机器人。
+基于 Wechaty & ChatGPT API 开发的微信聊天机器人。
 
 ## 如何使用？
 
@@ -19,6 +19,11 @@
 根据 `.env.example` 的示例创建 `.env` 文件。
 
 ```sh
+# 使用了 justjavac 大佬提供的代理代理地址
+# 避免直接调用 OpenAI API，导致可能存在被 openai 封号问题
+# See https://github.com/justjavac/chatgpt
+CHATGPT_PROXY_API_BASE_URL="https://closeai.deno.dev/v1"
+
 # 你的 API 密钥
 CHATGPT_API_KEY="sk-xxx"
 ```
