@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Temporary files
+cache/
+.history
+.cspellcache
+.eslintcache
+.DS_Store
+*.local
+*.tgz
+.idea
+.env
+
+# Build output
+dist/
+dist-ssr/
+temp/
+.temp
+*.tsbuildinfo
+
+# Wechaty Login Cache
+*.memory-card.json

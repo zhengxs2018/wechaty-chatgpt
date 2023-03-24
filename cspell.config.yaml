@@ -1,0 +1,39 @@
+version: "0.2"
+ignorePaths:
+  - archive
+  - dist
+  - node_modules
+dictionaries:
+  - en_US
+  - softwareTerms
+  - bash
+  - node
+  - npm
+  - html
+  - css
+  - typescript
+  - filetypes
+words:
+  - brolog
+  - btns
+  - casbin
+  - chatgpt
+  - dingtalk
+  - errcode
+  - errmsg
+  - filehelper
+  - gerror
+  - gptapi
+  - msgtype
+  - npmmirror
+  - openai
+  - preinstall
+  - qrcode
+  - tsdoc
+  - tsnd
+  - typeorm
+  - wechat
+  - wechaty
+ignoreWords:
+  - trivago
+  - zhengxs

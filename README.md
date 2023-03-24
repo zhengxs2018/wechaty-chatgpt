@@ -1,0 +1,45 @@
+# ChatGPT & Wechaty
+
+<a href="https://git1.mediinfo.cn/mdfe/developer/web-docs/-/merge_requests" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
+</a>
+
+基于 ChatGPT API 开发的微信聊天机器人。
+
+## 如何使用？
+
+**运行前置条件**
+
+因为用了 `fetch` API，所以要求 `nodejs >= 18`，但你们可以使用 [node-fetch][node-fetch] 作为 `polyfill`。
+
+推荐你们使用 `nvm` 或 [fnm][fnm] 等工具切换，项目已经添加了 `.node-version` 方便和工作环境区分。
+
+**设置环境变量**
+
+根据 `.env.example` 的示例创建 `.env` 文件。
+
+```sh
+# 你的 API 密钥
+CHATGPT_API_KEY="sk-xxx"
+```
+
+**启动项目**
+
+```sh
+# 安装依赖
+$ pnpm install
+
+# 启动项目
+$ pnpm start
+```
+
+## 特别注意
+
+据说用聊天机器人，可能存在封号的风险，使用时请慎重。
+
+## 版权声明
+
+MIT
+
+[fnm]: https://github.com/Schniz/fnm
+[node-fetch]: https://www.npmjs.com/package/node-fetch
