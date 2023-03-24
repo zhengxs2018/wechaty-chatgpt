@@ -3,7 +3,7 @@ import { Message } from 'wechaty'
 import { isRobotReady, showHelp } from '../services/robot.mjs'
 import wechaty from '../services/wechaty.mjs'
 import { isMentionSelf, isTextMessage } from '../utils/is.mjs'
-import { onChatGPT } from './on_chatgpt.js'
+import { onChatGPT } from './on_chatgpt.mjs'
 
 /**
  * 处理所有(含自身)的消息
