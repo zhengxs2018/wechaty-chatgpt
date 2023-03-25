@@ -53,6 +53,12 @@ $ pnpm start
 1. 据说在国内直接调用 chatgpt 的接口，可能存在被 **openai 封号** 的风险，使用时请慎重。
 2. 因微信启动会同步最近的消息，为了避免被 **微信封号**，所以默认是不启用的。
 
+## 体验机器人
+
+可以加此微信群体验机器人
+
+<img src="https://user-images.githubusercontent.com/7506913/227710922-7af758bb-d6cb-48c9-adb5-56a02e07d0ea.jpeg" alt="加群体验" width="240px" />
+
 ## 感谢
 
 以下排名不分先后。
