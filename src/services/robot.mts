@@ -1,7 +1,7 @@
 import { Message, log } from 'wechaty'
 
+import { isMatchCommand } from '../utils/command.mjs'
 import { RENEW_CHATGPT_SESSION_COMMAND } from '../utils/constants.mjs'
-import { isMatchCommand } from '../utils/is.mjs'
 
 /**
  * 机器人是否启动
@@ -49,9 +49,28 @@ const help = `功能菜单:
 在群内使用时，通过 @机器人 触发。
 `
 
+/**
+ * 显示帮助信息
+ *
+ * @param message - 消息对象
+ * @returns 空
+ */
 export function showHelp(message: Message): boolean | void {
   if (isMatchCommand(message, '菜单')) {
     message.say(help)
     return true
+  }
+}
+
+/**
+ * 检查心跳
+ *
+ * @param message - 消息对象
+ * @returns 空
+ */
+export function checkHeartbeat(message: Message): void {
+  if (message.room()) return
+  if (message.text() === '/ping') {
+    message.say('pong')
   }
 }

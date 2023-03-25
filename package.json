@@ -6,7 +6,7 @@
     "preinstall": "npx only-allow pnpm",
     "start": "tsx src/main.mts",
     "dev": "tsx watch src/main.mts",
-    "serve": "node -r dotenv/config ./dist/main.mjs",
+    "serve": "node ./dist/main.mjs",
     "build": "tsc",
     "lint": "eslint --fix src/**/*.mts",
     "cspell": "cspell --cache src/**/*.mts *.md",

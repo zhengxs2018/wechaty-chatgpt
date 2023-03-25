@@ -24,6 +24,7 @@ words:
   - filehelper
   - gerror
   - gptapi
+  - justjavac
   - msgtype
   - npmmirror
   - openai

@@ -1,8 +1,8 @@
 import { Message } from 'wechaty'
 
-import { isRobotReady, showHelp } from '../services/robot.mjs'
+import { checkHeartbeat, isRobotReady, showHelp } from '../services/robot.mjs'
 import wechaty from '../services/wechaty.mjs'
-import { isMentionSelf, isTextMessage } from '../utils/is.mjs'
+import { isMentionSelf, isTextMessage } from '../utils/message.mjs'
 import { onChatGPT } from './on_chatgpt.mjs'
 
 /**
@@ -18,7 +18,10 @@ export async function onMessage(message: Message): Promise<void> {
   if (isRobotReady(message) === false) return
 
   // TODO 暂不处理自身消息
-  if (message.self()) return
+  if (message.self()) {
+    checkHeartbeat(message)
+    return
+  }
 
   // TODO 暂不处理未提及机器人的消息
   if (!(await isMentionSelf(message))) return

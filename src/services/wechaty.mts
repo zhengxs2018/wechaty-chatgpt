@@ -1,5 +1,8 @@
 import { WechatyBuilder } from 'wechaty'
-import { Heartbeat, QRCodeTerminal } from 'wechaty-plugin-contrib'
+import {
+  /* Heartbeat,*/
+  QRCodeTerminal,
+} from 'wechaty-plugin-contrib'
 
 // 注意: 多人反馈存在封号风险, 请谨慎使用
 const bot = WechatyBuilder.build({
@@ -10,15 +13,15 @@ const bot = WechatyBuilder.build({
   },
 })
 
-bot.use(
-  Heartbeat({
-    contact: 'filehelper',
-    emoji: {
-      heartbeat: '😎',
-    },
-    intervalSeconds: 60,
-  }),
-)
+// bot.use(
+//   Heartbeat({
+//     contact: 'filehelper',
+//     emoji: {
+//       heartbeat: '😎',
+//     },
+//     intervalSeconds: 60,
+//   }),
+// )
 
 bot.use(QRCodeTerminal({ small: true }))
 
