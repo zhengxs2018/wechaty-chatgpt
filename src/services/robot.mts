@@ -4,16 +4,9 @@ import { isMatchCommand } from '../utils/command.mjs'
 import { RENEW_CHATGPT_SESSION_COMMAND } from '../utils/constants.mjs'
 
 /**
- * 机器人是否启动
- *
- * 微信启动会同步最近消息
- * 导致机器人一次性发送大量消息
- * 这对使用非常不友好
+ * 允许外部控制机器人启动和关闭
  */
 let isReady = false
-
-// 过来回流的同步消息
-const startDate: number = Date.now()
 
 /**
  * 是否应该启动机器人
@@ -22,9 +15,6 @@ const startDate: number = Date.now()
  * @returns 空
  */
 export function isRobotReady(message: Message): boolean {
-  // hack 防止过时的消息触发机器人的启动
-  if (message.date().getTime() < startDate) return false
-
   if (isReady) {
     if (isMatchCommand(message, '关闭')) {
       isReady = false

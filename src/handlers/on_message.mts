@@ -5,6 +5,9 @@ import wechaty from '../services/wechaty.mjs'
 import { isMentionSelf, isTextMessage } from '../utils/message.mjs'
 import { onChatGPT } from './on_chatgpt.mjs'
 
+// 过来回流的同步消息
+const startDate: number = Date.now()
+
 /**
  * 处理所有(含自身)的消息
  *
@@ -14,6 +17,9 @@ import { onChatGPT } from './on_chatgpt.mjs'
  * @returns 空
  */
 export async function onMessage(message: Message): Promise<void> {
+  // hack 防止过时的消息触发机器人的启动
+  if (message.date().getTime() < startDate) return
+
   // 检查机器人是否准备好了
   if (isRobotReady(message) === false) return
 
