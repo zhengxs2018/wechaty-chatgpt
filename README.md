@@ -43,6 +43,16 @@ $ pnpm start
 1. 据说用聊天机器人，可能存在被 **openai 封号** 的风险，使用时请慎重。
 2. 因微信启动会同步最近的消息，为了避免被 **微信封号**，所以默认是不启用的，需要给登录账号给自身发送 **启动/关闭** 指令。
 
+## 感谢
+
+以下排名不分先后。
+
+- [chatgpt](https://openai.com/)
+- [chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api/)
+- [wechaty](https://github.com/wechaty/)
+- [chatgpt proxy server](https://github.com/justjavac/chatgpt)
+- and more...
+
 ## 版权声明
 
 MIT
