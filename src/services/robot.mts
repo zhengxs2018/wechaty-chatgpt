@@ -19,7 +19,7 @@ let isReady = false
  * @returns 空
  */
 export function isRobotReady(message: Message): boolean {
-  // hack 防止过时的消息出发机器人的启动
+  // hack 防止过时的消息触发机器人的启动
   if (message.age() > 60) return isReady
 
   if (isReady) {
