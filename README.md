@@ -47,10 +47,10 @@ $ pnpm start
 
 以下排名不分先后。
 
-- [chatgpt](https://openai.com/)
-- [chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api/)
-- [wechaty](https://github.com/wechaty/)
-- [chatgpt proxy server](https://github.com/justjavac/chatgpt)
+- [OpenAI 官网](https://openai.com/)
+- [github: transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api)
+- [github: wechaty](https://github.com/wechaty/)
+- [justjavac 的 chatgpt 代理服务](https://github.com/justjavac/chatgpt)
 - and more...
 
 ## 版权声明
