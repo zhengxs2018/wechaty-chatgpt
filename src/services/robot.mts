@@ -12,6 +12,9 @@ import { RENEW_CHATGPT_SESSION_COMMAND } from '../utils/constants.mjs'
  */
 let isReady = false
 
+// 过来回流的同步消息
+const startDate: number = Date.now()
+
 /**
  * 是否应该启动机器人
  *
@@ -20,7 +23,7 @@ let isReady = false
  */
 export function isRobotReady(message: Message): boolean {
   // hack 防止过时的消息触发机器人的启动
-  if (message.age() > 60) return isReady
+  if (message.date().getTime() < startDate) return false
 
   if (isReady) {
     if (isMatchCommand(message, '关闭')) {

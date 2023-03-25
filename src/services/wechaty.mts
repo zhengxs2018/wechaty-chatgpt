@@ -10,6 +10,14 @@ const bot = WechatyBuilder.build({
   puppet: 'wechaty-puppet-wechat',
   puppetOptions: {
     uos: true,
+    cache: {
+      contact: 200,
+      message: 500,
+      room: 20,
+      roomMember: 500,
+      post: 5,
+      friendship: 5,
+    },
   },
 })
 
