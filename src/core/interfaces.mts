@@ -31,9 +31,3 @@ export type MessageListener = (
   reply: (sayable: Sayable) => void,
 ) => void
 
-export interface MessageService {
-  sendMessage(text: string, options?: { parentMessageId?: string }): Promise<{
-    id: string
-    text: string
-  }>
-}

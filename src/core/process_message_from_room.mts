@@ -1,6 +1,6 @@
 import type { Message, Room, Sayable } from 'wechaty'
 
-import type { MessageHandler } from './interfaces.mjs'
+import type { MessageListener } from './interfaces.mjs'
 import {
   hasMentionSelf,
   isTextMessage,
@@ -11,7 +11,7 @@ import {
 export async function processMessageFromRoom(
   room: Room,
   message: Message,
-  handler: MessageHandler,
+  listener: MessageListener,
 ) {
   // TODO: 支持其他类型的消息
   if (isTextMessage(message) === false) return
@@ -33,5 +33,5 @@ export async function processMessageFromRoom(
   }
 
   const text = removeMentionSelf(message, raw)
-  handler(`${room.id}/${talker.id}`, text, reply)
+  listener(`${room.id}/${talker.id}`, text, reply)
 }

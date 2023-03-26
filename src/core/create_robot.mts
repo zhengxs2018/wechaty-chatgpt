@@ -1,7 +1,7 @@
 import { WechatyOptions, log } from 'wechaty'
 
 import { createWechaty } from './create_wechaty.mjs'
-import type { MessageHandler, Robot } from './interfaces.mjs'
+import type { MessageListener, Robot } from './interfaces.mjs'
 import { processMessageFromIndividual } from './process_message_from_individual.mjs'
 import { processMessageFromRoom } from './process_message_from_room.mjs'
 import { processMessageFromRoot } from './process_message_from_root.mjs'
@@ -9,7 +9,7 @@ import { processMessageFromRoot } from './process_message_from_root.mjs'
 export function createRobot(options: WechatyOptions): Robot {
   let _isReady = false
   let _startupTime = Date.now()
-  let _handler: MessageHandler = () => void 0
+  let _listener: MessageListener = () => void 0
 
   const wechaty = createWechaty(options)
 
@@ -34,8 +34,8 @@ export function createRobot(options: WechatyOptions): Robot {
         wechaty.say('🤖 服务已停止')
       }
     },
-    async listen(handler) {
-      _handler = handler
+    async listen(listener) {
+      _listener = listener
 
       log.info('🤖️ 正在启动微信...')
       await wechaty.start()
@@ -58,7 +58,7 @@ export function createRobot(options: WechatyOptions): Robot {
     // 处理群消息
     const room = message.room()
     if (room) {
-      processMessageFromRoom(room, message, (...args) => _handler(...args))
+      processMessageFromRoom(room, message, (...args) => _listener(...args))
       return
     }
 
@@ -66,7 +66,7 @@ export function createRobot(options: WechatyOptions): Robot {
     const talker = message.talker()
     if (talker.type() === wechaty.Contact.Type.Individual) {
       processMessageFromIndividual(talker, message, (...args) =>
-        _handler(...args),
+        _listener(...args),
       )
       return
     }

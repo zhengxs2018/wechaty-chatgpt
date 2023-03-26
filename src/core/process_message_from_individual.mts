@@ -1,11 +1,11 @@
 import type { Contact, Message, Sayable } from 'wechaty'
 
-import type { MessageHandler } from './interfaces.mjs'
+import type { MessageListener } from './interfaces.mjs'
 
 export async function processMessageFromIndividual(
   talker: Contact,
   message: Message,
-  handler: MessageHandler
+  listener: MessageListener
 ) {
   const text = message.text().trim()
 
@@ -18,5 +18,5 @@ export async function processMessageFromIndividual(
     }
   }
 
-  handler(talker.id, text, reply)
+  listener(talker.id, text, reply)
 }
