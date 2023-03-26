@@ -2,10 +2,6 @@
   "compilerOptions": {
     "module": "NodeNext",
     "target": "es2022",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "removeComments": true,
     "outDir": "./dist",
     "strictNullChecks": false,

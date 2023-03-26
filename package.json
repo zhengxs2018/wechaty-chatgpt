@@ -3,10 +3,9 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "start": "tsx src/main.mts",
-    "dev": "tsx watch src/main.mts",
-    "serve": "node ./dist/main.mjs",
+    "start": "tsx -r dotenv/config src/main.mts",
+    "dev": "tsx -r dotenv/config watch src/main.mts",
+    "serve": "node -r dotenv/config ./dist/main.mjs",
     "build": "tsc",
     "lint": "eslint --fix src/**/*.mts",
     "cspell": "cspell --cache src/**/*.mts *.md",
