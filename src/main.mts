@@ -1,22 +1,19 @@
-import { log } from 'wechaty'
+import { ChatGPTAPI } from 'chatgpt'
 
-import { onMessage } from './handlers/on_message.mjs'
-import bot from './services/wechaty.mjs'
+import { chatgptMessageHandler } from './chatgpt_message_handler.mjs'
+import { createRobot } from './core/mod.mjs'
 
-bot.on('message', onMessage)
-
-bot.on('login', user => {
-  log.info(`🤖 ${user} 已登录`)
-  bot.say('🤖 机器人上线了')
+const bot = createRobot({
+  name: 'WechatRobot',
+  puppet: 'wechaty-puppet-wechat',
+  puppetOptions: {
+    uos: true,
+  },
 })
 
-bot.on('logout', user => {
-  log.info(`🤖 ${user} 已登出`)
+const api = new ChatGPTAPI({
+  apiBaseUrl: process.env.CHATGPT_API_BASE_URL,
+  apiKey: process.env.CHATGPT_API_KEY,
 })
 
-bot.on('error', ex => {
-  log.error('🤖 错误：$s', ex.message)
-})
-
-await bot.start()
-log.info('开始登录微信...')
+await bot.listen(chatgptMessageHandler(api))

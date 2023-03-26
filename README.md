@@ -8,22 +8,15 @@
 
 ## 如何使用？
 
-**运行前置条件**
+> 需要安装 `nodejs >= 18` 和 `pnpm`。
 
-因为用了 `fetch` API，所以要求 `nodejs >= 18`，但你们可以使用 [node-fetch][node-fetch] 作为 `polyfill`。
+推荐你们使用 `nvm` 或 [fnm][fnm] 管理 Node.js 版本。
 
-推荐你们使用 `nvm` 或 [fnm][fnm] 等工具切换，项目已经添加了 `.node-version` 方便和工作环境区分。
+**环境变量**
 
-**设置环境变量**
-
-根据 `.env.example` 的示例创建 `.env` 文件。
+点击 [这里](https://platform.openai.com/account/api-keys) 获取你的 API KEY。
 
 ```sh
-# 使用了 justjavac 大佬提供的代理代理地址
-# 避免直接调用 OpenAI API，导致可能存在被 openai 封号问题
-# See https://github.com/justjavac/chatgpt
-CHATGPT_PROXY_API_BASE_URL="https://closeai.deno.dev/v1"
-
 # 你的 API 密钥
 CHATGPT_API_KEY="sk-xxx"
 ```
@@ -38,34 +31,50 @@ $ pnpm install
 $ pnpm start
 ```
 
-## 支持的指令
+## 指令
 
-| 名称     | 描述                              | 谁可以使用？ | 如何使用？        |
-| -------- | --------------------------------- | ------------ | ----------------- |
-| 启动     | 启动机器人                        | 自己         | 发送给自己的微信  |
-| 关闭     | 关闭机器人                        | 自己         | 发送给自己的微信  |
-| /ping    | 回复 pong，用于检查机器人是否运行 | 自己         | 发送给自己的微信  |
-| 重新开始 | 重新创建新的会话                  | 任何人       | 发送或群内@机器人 |
-| 帮助     | 获取帮助菜单                      | 任何人       | 发送或群内@机器人 |
+### 控制指令
 
-## 特别注意
+| 名称        | 描述         | 谁可以使用？         | 如何使用？         |
+| ----------- | ------------ | -------------------- | ------------------ |
+| /r, /start  | 启动机器人   | 机器人所登录的微信号 | 发送给自己的微信号 |
+| /s, /stop   | 关闭机器人   | 机器人所登录的微信号 | 发送给自己的微信号 |
+| /t, /status | 获取运行状态 | 机器人所登录的微信号 | 发送给自己的微信号 |
+| /h, /help   | 获取帮助菜单 | 机器人所登录的微信号 | 发送给自己的微信号 |
 
-1. 据说在国内直接调用 chatgpt 的接口，可能存在被 **openai 封号** 的风险，使用时请慎重。
-2. 因微信启动会同步最近的消息，为了避免被 **微信封号**，所以默认是不启用的。
+### 聊天指令
+
+提供了记录当前会话的功能，群聊和私聊使用不会的会话 ID。
+
+> 注意：只重制自身，不会影响到他人。
+
+| 名称       | 描述           | 谁可以使用？ | 如何使用？                 |
+| ---------- | -------------- | ------------ | -------------------------- |
+| /r, /reset | 重新开始会话   | 所有人       | 私聊直接发送，群内 @机器人 |
+| /c, /code  | 获取机器人源码 | 所有人       | 私聊直接发送，群内 @机器人 |
+| /h, /help  | 获取帮助菜单   | 所有人       | 私聊直接发送，群内 @机器人 |
 
 ## 感谢
 
 以下排名不分先后。
 
-- [OpenAI 官网](https://openai.com/)
+- [ChatGPT](https://openai.com/)
 - [github: transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api)
-- [github: wechaty](https://github.com/wechaty/)
-- [justjavac 的 chatgpt 代理服务](https://github.com/justjavac/chatgpt)
+- [github: wechaty/wechaty](https://github.com/wechaty/wechaty)
+- [github: justjavac/chatgpt](https://github.com/justjavac/chatgpt)
 - and more...
 
-## 版权声明
+## 特别说明
+
+目前有类型项目的人反馈，也可能是其他原因，请谨慎使用本项目。
+
+1. 国内直接调用接口，可能被 OpenAI 封号。
+2. 将微信账号提供给机器人使用，被 微信 封号。
+
+本项目仅提供学习用途，请自行承担风险。
+
+## License
 
 MIT
 
 [fnm]: https://github.com/Schniz/fnm
-[node-fetch]: https://www.npmjs.com/package/node-fetch
