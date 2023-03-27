@@ -12,10 +12,10 @@ const bot = createRobot({
 })
 
 const api = new ChatGPTAPI({
-  apiBaseUrl: process.env.CHATGPT_API_BASE_URL,
+  apiBaseUrl: process.env.CHATGPT_API_BASE_URL || 'https://closeai.deno.dev/v1',
   apiKey: process.env.CHATGPT_API_KEY,
   completionParams: {
-    model: process.env.CHATGPT_MODEL,
+    model: process.env.CHATGPT_MODEL || 'gpt-3.5-turbo',
   },
 })
 
