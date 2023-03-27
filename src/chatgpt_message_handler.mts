@@ -1,5 +1,4 @@
-
-import { ChatGPTAPI } from 'chatgpt'
+import { ChatGPTAPI, ChatGPTError } from 'chatgpt'
 import { LRUCache } from 'lru-cache'
 import { Sayable, log } from 'wechaty'
 
@@ -20,9 +19,7 @@ const help = `🤖 使用说明
 获取帮助: /h, /help
 `
 
-export function chatgptMessageHandler(
-  api: ChatGPTAPI,
-): MessageListener {
+export function chatgptMessageHandler(api: ChatGPTAPI): MessageListener {
   const cache = new LRUCache<string, string>({
     max: 500,
     ttl: 1000 * 60 * 5,
@@ -66,9 +63,32 @@ export function chatgptMessageHandler(
       reply(res.text)
     } catch (ex) {
       clearTimeout(timer)
-      log.error(ex)
 
-      reply('😭 人太多，聊不过来了')
+      // 感谢 @cgqaq 提供的错误码参考
+      // https://help.openai.com/en/articles/6891839-api-error-code-guidance
+      // https://platform.openai.com/docs/guides/error-codes/error-codes
+      if (ex instanceof ChatGPTError) {
+        // 无效的 API Key / 非组织成员
+        if (ex.statusCode === 401 || ex.statusCode === 404) {
+          reply('😭 模型不让用了')
+          return
+        }
+
+        // 当前使用的模型太多请求 / 达到每月最高支出限额 / ChatGPT 服务器流量过高
+        if (ex.statusCode === 429) {
+          reply('😭 人太多，聊不过来了')
+          return
+        }
+
+        // ChatGPT 服务器出错
+        if (ex.statusCode === 500) {
+          reply('😭 聊崩了，等会再试试')
+          return
+        }
+      }
+
+      log.error(ex)
+      reply('😭 想说点什么，但是没想好')
     }
   }
 }
