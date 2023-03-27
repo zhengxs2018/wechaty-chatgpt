@@ -14,6 +14,9 @@ const bot = createRobot({
 const api = new ChatGPTAPI({
   apiBaseUrl: process.env.CHATGPT_API_BASE_URL,
   apiKey: process.env.CHATGPT_API_KEY,
+  completionParams: {
+    model: process.env.CHATGPT_MODEL,
+  },
 })
 
 await bot.listen(chatgptMessageHandler(api))
