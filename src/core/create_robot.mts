@@ -7,7 +7,7 @@ import { processMessageFromRoom } from './process_message_from_room.mjs'
 import { processMessageFromRoot } from './process_message_from_root.mjs'
 
 export function createRobot(options: WechatyOptions): Robot {
-  let _isReady = false
+  let _isReady = true
   let _startupTime = Date.now()
   let _listener: MessageListener = () => void 0
 
