@@ -22,7 +22,7 @@ export interface Robot {
   /**
    * 监听消息
    */
-  listen(handler: MessageListener): Promise<void>
+  listen(messageHandler: MessageListener): Promise<void>
 }
 
 export type MessageListener = (

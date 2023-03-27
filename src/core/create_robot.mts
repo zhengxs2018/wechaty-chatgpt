@@ -34,8 +34,8 @@ export function createRobot(options: WechatyOptions): Robot {
         wechaty.say('🤖 服务已停止')
       }
     },
-    async listen(listener) {
-      _listener = listener
+    async listen(messageHandler) {
+      _listener = messageHandler
 
       log.info('🤖️ 正在启动微信...')
       await wechaty.start()
