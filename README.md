@@ -8,7 +8,7 @@
 
 ## 如何使用？
 
-> 需要安装 `nodejs >= 18` 和 `pnpm`。
+> 需要安装 `nodejs >= 16` 和 `pnpm`。
 
 推荐你们使用 `nvm` 或 [fnm][fnm] 管理 Node.js 版本。
 
