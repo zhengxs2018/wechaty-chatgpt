@@ -1,42 +1,24 @@
 {
-  "name": "chatgpt-robot",
+  "name": "chatbot",
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "start": "tsx -r dotenv/config src/main.mts",
-    "dev": "tsx -r dotenv/config watch src/main.mts",
-    "serve": "node -r dotenv/config ./dist/main.mjs",
-    "build": "tsc",
-    "lint": "eslint --fix src/**/*.mts",
-    "cspell": "cspell --cache src/**/*.mts *.md",
-    "fmt": "prettier -w src/**/*.mts"
+    "serve": "node -r dotenv/config ./lib/main.mjs",
+    "fmt": "prettier lib/**/*.mjs -w"
   },
   "dependencies": {
-    "chatgpt": "^5.1.2",
+    "chatgpt": "^5.2.2",
     "dotenv": "^16.0.3",
-    "lru-cache": "^8.0.4",
+    "node-fetch": "^3.3.1",
+    "quick-lru": "^6.1.1",
+    "to-single-quotes": "^4.0.0",
     "wechaty": "^1.20.2",
     "wechaty-plugin-contrib": "^1.12.1",
-    "wechaty-puppet-wechat": "^1.18.4"
+    "wechaty-puppet-wechat4u": "^1.13.15"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/eslint": "^8.21.3",
-    "@types/node": "~16.9.1",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "cspell": "^6.30.2",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-typescript": "^3.5.3",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-tsdoc": "^0.2.17",
-    "eslint-plugin-unicorn": "^46.0.0",
-    "prettier": "^2.8.6",
-    "ts-node": "^10.9.1",
-    "tsx": "^3.12.6",
-    "typescript": "^5.0.2"
+    "prettier": "^2.8.7"
   },
   "packageManager": "pnpm@7.0.0",
   "pnpm": {
@@ -46,15 +28,11 @@
       },
       "ignoreMissing": [
         "brolog",
-        "gerror",
         "rxjs",
         "redux",
         "wechaty-puppet"
       ]
     }
-  },
-  "engines": {
-    "node": ">=16.0.0"
   },
   "author": {
     "name": "zhengxs2018",

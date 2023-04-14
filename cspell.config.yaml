@@ -19,11 +19,8 @@ words:
   - casbin
   - cgqaq
   - chatgpt
-  - dingtalk
   - errcode
   - errmsg
-  - filehelper
-  - gerror
   - gptapi
   - justjavac
   - msgtype
@@ -31,9 +28,6 @@ words:
   - openai
   - preinstall
   - qrcode
-  - tsdoc
-  - tsnd
-  - typeorm
   - wechat
   - wechaty
 ignoreWords:

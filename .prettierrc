@@ -3,11 +3,16 @@
   "singleQuote": true,
   "arrowParens": "avoid",
   "trailingComma": "all",
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "importOrder": ["node:*", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"],
-  "importOrderParserPlugins": ["typescript"],
+  "importOrder": [
+    "node:*",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]"
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "overrides": [
     {
       "files": ".prettierrc",
