@@ -1,4 +1,4 @@
-version: "0.2"
+version: '0.2'
 ignorePaths:
   - archive
   - dist
@@ -19,15 +19,23 @@ words:
   - casbin
   - cgqaq
   - chatgpt
+  - downurl
   - errcode
   - errmsg
   - gptapi
+  - ismp
+  - ismv
   - justjavac
+  - kugou
   - msgtype
+  - mvdata
+  - mvicon
   - npmmirror
   - openai
   - preinstall
   - qrcode
+  - showtype
+  - songname
   - wechat
   - wechaty
 ignoreWords:
