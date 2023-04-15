@@ -204,7 +204,7 @@ export async function searchAndGetOne(keyword, ismv) {
       .map(a => a.author_name)
       .join('与')}等人演唱的歌曲“${result.songName}“`
   } else {
-    description = `我在酷狗已为你找到由${result.singerName}演唱的歌曲“${result.singerName}”`
+    description = `我在酷狗已为你找到由${result.singerName}演唱的歌曲“${result.songName}”`
   }
 
   if (result.error) {
