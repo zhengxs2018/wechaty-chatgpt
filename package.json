@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "serve": "node -r dotenv/config ./lib/main.mjs",
-    "fmt": "prettier lib/**/*.mjs -w"
+    "serve": "node -r dotenv/config ./main.mjs",
+    "fmt": "prettier . -w"
   },
   "dependencies": {
     "chatgpt": "^5.2.2",
@@ -19,20 +19,6 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "prettier": "^2.8.7"
-  },
-  "packageManager": "pnpm@7.0.0",
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "typescript": "5"
-      },
-      "ignoreMissing": [
-        "brolog",
-        "rxjs",
-        "redux",
-        "wechaty-puppet"
-      ]
-    }
   },
   "author": {
     "name": "zhengxs2018",

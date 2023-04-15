@@ -8,11 +8,7 @@
 
 ## 如何使用？
 
-> 需要安装 `nodejs >= 18` 和 `pnpm`。
-
-推荐你们使用 `nvm` 或 [fnm][fnm] 管理 Node.js 版本。
-
-**环境变量**
+**设置环境变量**
 
 点击 [这里](https://platform.openai.com/account/api-keys) 获取你的 API KEY。
 
@@ -30,6 +26,16 @@ $ pnpm install
 # 启动项目
 $ pnpm serve
 ```
+
+### 在线服务
+
+> TODO 支持 UrlLink 消息
+
+目前接入的在线服务
+
+| 服务     | 关键字       | 描述                                      | 谁可以使用？ | 如何使用？         |
+| -------- | ------------ | ----------------------------------------- | ------------ | ------------------ |
+| 酷狗音乐 | 播放,歌曲,mv | 获取歌曲或 mv 的播放地址，如：阿悠悠的 mv | 所有人       | 私聊或群内 @机器人 |
 
 ## 指令
 
@@ -56,6 +62,15 @@ $ pnpm serve
 ## 加群体验
 
 <img src="https://user-images.githubusercontent.com/7506913/231931222-21238a9d-6d22-43d5-a257-b92c3363dda1.png" alt="加群体验" width="240px" /><img src="https://user-images.githubusercontent.com/7506913/228170658-8d42605a-5d7c-42ed-bab3-b29ae3370e9b.jpg" alt="一起急眼" width="240px" /><img src="https://user-images.githubusercontent.com/7506913/228170706-9f085654-a79e-4e13-ad4f-3235275d6eed.png" alt="一起急眼" width="240px" />
+
+## 支持的 NodeJS 版本
+
+> 目前本地测试的版本
+
+- 16.19.1
+- 18.12.1
+
+推荐使用 `nvm` 或 [fnm][fnm] 管理 Node.js 版本。
 
 ## 感谢
 
