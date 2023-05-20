@@ -15,29 +15,14 @@ dictionaries:
   - filetypes
 words:
   - brolog
-  - btns
-  - casbin
-  - cgqaq
   - chatgpt
-  - downurl
-  - errcode
-  - errmsg
-  - gptapi
-  - ismp
+  - easybot
   - ismv
-  - justjavac
   - kugou
-  - msgtype
-  - mvdata
-  - mvicon
   - npmmirror
-  - openai
-  - preinstall
-  - qrcode
-  - showtype
-  - songname
   - wechat
   - wechaty
 ignoreWords:
+  - justjavac
   - trivago
   - zhengxs

@@ -1,0 +1,25 @@
+{
+  "name": "@zhengxs/easybot",
+  "type": "module",
+  "version": "0.1.0-beta.0",
+  "main": "src/index.mjs",
+  "peerDependencies": {
+    "wechaty": "^1.20.2",
+    "wechaty-puppet": "^1.20.2"
+  },
+  "dependencies": {
+    "quick-lru": "^6.1.1"
+  },
+  "devDependencies": {
+    "wechaty": "^1.20.2",
+    "wechaty-puppet": "^1.20.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": {
+    "name": "zhengxs2018",
+    "email": "zhengxs2018@gmail.com"
+  },
+  "license": "MIT"
+}

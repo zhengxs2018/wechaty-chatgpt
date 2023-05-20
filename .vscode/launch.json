@@ -1,0 +1,25 @@
+{
+  // 使用 IntelliSense 了解相关属性。
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "调试程序",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "args": ["--no-warnings", "-r dotenv/config"],
+      "program": "${workspaceFolder}/src/main.mjs"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "调试进程",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "restart": true
+    }
+  ]
+}

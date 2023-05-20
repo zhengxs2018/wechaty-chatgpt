@@ -10,8 +10,8 @@ export default new ChatGPTAPI({
   apiOrg: process.env.CHATGPT_API_ORG,
   // @ts-ignore
   fetch: fetch,
+  // maxModelTokens: 512,
   completionParams: {
     model: 'gpt-3.5-turbo',
-    max_tokens: 1024,
   },
 })

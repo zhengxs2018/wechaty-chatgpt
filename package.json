@@ -1,24 +1,45 @@
 {
-  "name": "chatbot",
+  "name": "root",
+  "private": true,
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "serve": "node -r dotenv/config ./main.mjs",
+    "start": "node --no-warnings -r dotenv/config ./src/main.mjs",
+    "debug": "node --inspect --no-warnings -r dotenv/config ./src/main.mjs",
     "fmt": "prettier . -w"
   },
   "dependencies": {
-    "chatgpt": "^5.2.2",
-    "dotenv": "^16.0.3",
+    "@zhengxs/easybot": "workspace:*",
+    "chatgpt": "^5.2.4",
+    "file-box": "^1.4.15",
     "node-fetch": "^3.3.1",
     "quick-lru": "^6.1.1",
     "to-single-quotes": "^4.0.0",
     "wechaty": "^1.20.2",
     "wechaty-plugin-contrib": "^1.12.1",
-    "wechaty-puppet-wechat4u": "^1.13.15"
+    "wechaty-puppet-wechat4u": "^1.14.1"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "prettier": "^2.8.7"
+    "dotenv": "^16.0.3",
+    "prettier": "^2.8.8"
+  },
+  "packageManager": "pnpm@7.0.0",
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "typescript": "5"
+      },
+      "ignoreMissing": [
+        "brolog",
+        "rxjs",
+        "redux",
+        "wechaty-puppet"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=16.x.x"
   },
   "author": {
     "name": "zhengxs2018",
