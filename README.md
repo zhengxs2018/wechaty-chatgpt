@@ -2,9 +2,8 @@
 
 > 本项目仅提供学习用途，如有任何问题，需要自行承担风险。
 
-<a href="https://github.com/zhengxs2018/wechaty-chatgpt" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
-</a>
+> [!WARNING]
+> 请使用 [@zhengxs2018/wechaty-plugin-assistant](https://github.com/zhengxs2018/wechaty-plugin-assistant)
 
 基于 Wechaty & ChatGPT API 开发的微信聊天机器人。
 
